@@ -115,11 +115,11 @@ proc report_tg_status {} {
   if {$selected_tg > 0} {
     set prev_announce_time [clock seconds]
     set prev_announce_tg $selected_tg
-  if {$selected_tg<1239900} {
+  if {$selected_tg<26099900} {
     playMsg "Core" "talk_group"
     say_talkgroup $selected_tg }
   } else {
-  if {$previous_tg<1239900} {
+  if {$previous_tg<26099900} {
     playMsg "Core" "previous"
     playMsg "Core" "talk_group"
     say_talkgroup $previous_tg }
@@ -170,7 +170,7 @@ proc tg_local_activation {new_tg old_tg} {
       playMsg "Core" "disconnected"
       playSilence 200
     }
-  if {$new_tg<1239900} {
+  if {$new_tg<26099900} {
     playMsg "Core" "talk_group"
     say_talkgroup $new_tg }
   }
@@ -236,7 +236,7 @@ proc tg_command_activation {new_tg old_tg} {
     playMsg "Core" "disconnected"
     playSilence 200
   }
-  if {$new_tg<1239900} {
+  if {$new_tg<26099900} {
   playMsg "Core" "talk_group"
   say_talkgroup $new_tg }
 }
@@ -284,7 +284,7 @@ proc tg_qsy {new_tg old_tg} {
   set prev_announce_tg $new_tg
   playSilence 100
   playMsg "Core" "qsy"
-  if {$new_tg<1239900} {
+  if {$new_tg<26099900} {
   #playMsg "Core" "talk_group"
   say_talkgroup $new_tg }
 }
@@ -324,7 +324,7 @@ proc tg_qsy_failed {} {
 proc tg_qsy_pending {tg} {
   playSilence 100
   playMsg "Core" "qsy"
-  if { $tg <1239900} {
+  if { $tg <26099900} {
   say_talkgroup $tg}
   playMsg "Core" "pending"
 }
@@ -340,7 +340,7 @@ proc tg_qsy_ignored {tg} {
   playSilence 100
   if {!$qsy_pending_active} {
     playMsg "Core" "qsy"
-    if {$tg <1239900} {
+    if {$tg <26099900} {
     say_talkgroup $tg }
   }
   playMsg "Core" "ignored"
