@@ -325,7 +325,7 @@ proc tg_qsy_pending {tg} {
   playSilence 100
   playMsg "Core" "qsy"
   if { $tg <26099900} {
-  say_talkgroup $tg}
+  say_talkgroup $tg }
   playMsg "Core" "pending"
 }
 
